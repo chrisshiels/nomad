@@ -8,7 +8,7 @@ job "web" {
     max_parallel = 1
   }
 
-  group "cache" {
+  group "web" {
     count = 3
     restart {
       attempts = 10
@@ -28,7 +28,7 @@ job "web" {
 
       resources {
         cpu    = 500
-        memory = 256
+        memory = 32
         network {
           port "http" {}
         }
